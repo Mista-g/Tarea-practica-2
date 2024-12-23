@@ -1,0 +1,719 @@
+
+body {
+    background-color: #0A0E12;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    margin: 0;
+    position: relative;
+    z-index: -1;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(18, 25, 32, 0.8); 
+    color: white;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #dcdcdc;
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #ffffff;
+}
+
+.nav-link.active::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(180deg, #ff3f3f, #ff0080);
+}
+
+.header-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.search-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.search-button:hover {
+    transform: scale(1.1);
+}
+
+.btn {
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-outline {
+    background: linear-gradient(180deg, #ff3f3f, #ff0080);
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}
+
+.btn-outline:hover {
+    background: linear-gradient(180deg, #cf2929, #ca0065);
+    color: #ffffff;
+}
+
+.btn-primary {
+    background: linear-gradient(180deg, #ff3f3f, #ff0080);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(180deg, #cf2929, #ca0065);
+}
+
+.cta-button {
+    background: linear-gradient(180deg, #ff3f3f, #ff0080);
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.main-container {
+    padding-top: 10%;
+    display: flex;
+    justify-content: space-evenly; 
+}
+
+.menu {
+    height: 100%;
+    margin-left: 7%;
+    width: 250px;
+    background-color: #121920;
+    padding: 10px;
+    border-radius: 8px;
+    margin-right: 10px; 
+}
+
+.menu-section h3 {
+    margin: 0;
+    padding: 10px;
+    background-color: #202c38;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.menu-section h3 .arrow {
+    transition: transform 0.3s ease;
+}
+
+.menu-section h3.expanded .arrow {
+    transform: rotate(90deg);
+}
+.submenu{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.submenu h4 {
+    margin: 0;
+    padding: 10px;
+    background-color: #202c38;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.submenu h4 .arrow {
+    transition: transform 0.3s ease;
+}
+
+.submenu h4.expanded .arrow {
+    transform: rotate(90deg);
+}
+
+.submenu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+}
+
+.submenu ul li {
+    padding: 10px;
+    border-bottom: 1px solid #444;
+    cursor: pointer;
+    color: #dcdcdc;
+}
+
+.submenu ul li:hover {
+    background-color: #444;
+}
+
+.submenu ul li:last-child {
+    border-bottom: none;
+}
+
+.betting-interface {
+    height: auto;
+    width: 50%;
+    max-width: 100%;
+}
+
+.right-section {
+    background-color: #18212A;
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+    width: 250px;
+    height: 400px;
+}
+
+.tab-menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #444;
+}
+
+.tab {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: background-color 0.3s, border-bottom 0.3s;
+}
+
+.tab:hover,
+.tab.active {
+    border-bottom: 2px solid #ff3f3f;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.icon {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.icon img {
+    width: 40px;
+    height: 40px;
+}
+
+
+.bet-slip, .history {
+    background-color: #1c1c1c;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.bet-slip p, .history p {
+    margin: 0;
+}
+
+.swiper-horizontal {
+    touch-action: pan-y;
+}
+
+.swiper-free-mode>.swiper-wrapper {
+    height: auto;
+    transition-timing-function: ease-out;
+    margin: 0 auto;
+}
+
+.swiper-contenedor-2 {
+    background: #18212A;
+    height: 100%;
+    border-radius: 20px;
+    display: grid;
+    grid-template: 1fr 1fr / 1fr;
+}
+
+.swiper-slide-2 {
+    height: 22rem;
+    padding-right: 1rem;
+}
+
+.envivo-contenedor-superior {
+    display: grid;
+    grid-template: auto / repeat( 3, 1fr );
+    border-bottom: 1px solid #2B3A4F;
+}
+
+.envivo-contenedor-superior1 {
+    display: grid;
+    grid-template: 2fr 1fr / 1fr;
+}
+
+.envivo-contenedor-superior-imagen {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.envivo-contenedor-superior-placeholder {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.envivo-contenedor-superior2 {
+    border-left: 1px solid #2B3A4F;
+    padding-left: 2rem;
+    padding-top: 1rem;
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr;
+    font-size: 15px;
+}
+
+.envivo-contenedor-superior2-pais {
+    padding-bottom: 10px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.envivo-contenedor-superior3 {
+    padding-top: 1rem;
+    padding-right: 2rem;
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr;
+    font-size: 15px;
+    justify-content: flex-end;
+    text-align: end;
+}
+
+.envivo-contenedor-superior3-imagen {
+    margin-right: 55px;
+    padding: 2px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.envivo-contenedor-superior3-tag {
+    background: #03A750 ;
+    margin-left: 100px;
+    display: flex;
+    width: 50px;
+    color: white;
+    padding: 1rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    border-radius: 10px;
+}
+
+.envivo-contenedor-superior3-liga {
+    color: #03A750 ;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    grid-gap: .5rem;
+}
+
+.envivo-contenedor-inferior {
+    display: grid;
+    grid-template: auto / repeat( 3, 1fr );
+}
+
+.envivo-contenedor-inferior-boton {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.envivo-boton-inferior {
+    border: 1px solid #95AAC5;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    border-radius: 20px;
+    transition: .5s;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    grid-gap: .75rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.envivo-boton-imagen {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.envivo-boton-placeholder {
+    font-size: 18px;
+}
+
+#slider-deportes {
+    margin-top: 20px;
+    background-color: #202c38; 
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#slider-deportes .swiper-slide {
+    height: auto;
+    text-align: center;
+    font-size: 14px;
+}
+
+.image-button {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+#slider-deportes img {
+    width: 50px; 
+    height: 50px;
+    margin-bottom: 5px;
+}
+
+#slider-deportes p {
+    margin: 0;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+
+.swiper-pagination {
+    bottom: 10px;
+}
+.selector-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #202c38;
+    border-radius: 10px;
+}
+
+.match-selector, .search-container, .category-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.match-selector select, .search-container input, .category-selector select {
+    padding: 8px 12px;
+    background-color: #2b3a4f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search-container input {
+    height: auto;
+    width: 220px;
+}
+
+.match-selector select:focus, .search-container input:focus, .category-selector select:focus {
+    outline: none;
+    border-color: #ff3f3f;
+    box-shadow: 0 0 5px rgba(255, 63, 63, 0.5);
+}
+
+label {
+    font-size: 14px;
+    color: #ffffff;
+}
+.pagina-interna{
+    position:	relative;
+    width:		100%;
+    height:		100%;
+    overflow:	auto;
+    top:		0;
+    left:		0;
+}
+.partido-tabla-futbol-color{ 
+    color: white;
+    background: #18212A;
+    border-radius: 20px;
+    width: 1500px;
+    font-size: 1.5rem;
+    user-select: none;
+    cursor: pointer; 
+}
+
+.partido-tabla-futbol{
+    display: grid;
+    grid-template: auto / 25px 1fr 25px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    grid-gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem; 
+}
+
+.partido-tabla-futbol-img{
+    display: flex;
+    flex-flow: column;
+    justify-content:
+    center; align-items:
+    center; 
+}
+
+.partido-tabla-futbol-palabra{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: flex-start; 
+} 
+.partido-tabla-futbol-corazon{ 
+    margin-left: -18px;
+    display: flex; 
+    flex-flow: column; 
+    justify-content: center;  
+} 
+.header-dos-por-uno{ 
+    display: flex; 
+    flex-flow: column; 
+    justify-content: center; 
+    align-items: center;
+}
+.td-dos-por-uno{ 
+    border-bottom: 
+    1px solid #4E6781 ; 
+    border-right: 1px solid #4E6781 ;
+}
+.borde-left-tabla{
+    border-right: #4E6781 1px solid;
+} 
+
+table.partido-tabla-futbol-color {
+    margin-bottom: 5%;
+    font-size: 1rem; 
+    width: 100%; 
+}
+
+table.partido-tabla-futbol-color td {
+    padding: 0.5rem; 
+}
+
+table.partido-tabla-futbol-color th {
+    padding: 0.5rem;
+    text-align: center; 
+}
+
+table.partido-tabla-futbol-color img {
+    max-width: 30px;
+    height: auto;
+}
+
+.dos-por-uno-fila, .dos-por-uno-fila-2 {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-gap: 0.5rem;
+    height: auto; 
+}
+
+.columna-dos-por-uno {
+    padding-top: 0.5rem; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    grid-gap: 0.5rem;
+}
+
+.borde-left-tabla {
+    text-align: center;
+    border-left: 1px solid #222F3B; 
+    padding: 0.5rem; 
+}
+
+.contenedor-tabla-envivo-futbol {
+    display: grid;
+    grid-template-columns: 1fr 25px;
+    padding: 0.5rem 1rem; 
+}
+
+.contenedor-envivo-futbol-tabla {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem; 
+}
+
+.contenedor-envivo-futbol-tabla-img img {
+    width: 20px; 
+    height: auto;
+}
+
+.boton-envivo-tabla {
+    font-size: 1rem; 
+    padding: 0.5rem 1rem; 
+    border-radius: 5px; 
+}
+.ver-todos-botones-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.ver-todos-botones {
+    background: linear-gradient(180deg, #ff3f3f, #ff0080);
+    color: #fff; 
+    padding: 10px 20px; 
+    font-size: 20px; 
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.ver-todos-botones:hover {
+    background: linear-gradient(180deg, #cf2929, #ca0065); 
+}
+.footer {
+    background-color: #000000;
+    color: #fff;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.footer-section {
+    flex: 1 1 200px;
+    margin: 20px;
+}
+
+.footer-section h3 {
+    padding-left: 40%;
+    margin-top: 0;
+}
+
+.footer-section ul {
+
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    padding-left: 40%;
+    padding-top: 7px;
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-media-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-media-icons a img {
+    width: 24px;
+    height: 24px;
+}
+
+.payment-methods {
+    position: relative;
+    text-align: right;
+}
+
+.payment-methods img {
+
+    background-color: #ffffff;
+    width: 18%;
+    height: 34px;
+}
+
+.footer-bottom {
+    color: #686868;
+    flex: 1 1 100%;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.footer-bottom hr{
+    border: 0;
+    height: 1px;
+    background-color: #fff;
+    margin: 20px 0;
+}
+
+.footer-bottom p {
+    margin: 10px 0;
+}
